@@ -1,6 +1,6 @@
 {
   "name": "legado-fish-vscode",
-  "displayName": "legado-fish-vscode",
+  "displayName": "legado阅读摸鱼",
   "description": "阅读app vscode摸鱼",
   "version": "0.0.1",
   "engines": {
@@ -28,7 +28,7 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.89.0",
+    "@types/vscode": "^1.85.0",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
