@@ -1,15 +1,34 @@
 {
   "name": "legado-fish-vscode",
   "displayName": "legado阅读摸鱼",
-  "description": "阅读app vscode摸鱼",
-  "version": "0.0.1",
-  "publisher": "Keegan Hu",
+  "description": "配合阅读app vscode摸鱼插件,用下方的控制台看小说",
+  "version": "0.1.0",
+  "publisher": "keeganhu",
   "engines": {
     "vscode": "^1.85.0"
   },
   "categories": [
     "Other"
   ],
+  "license": "MIT",
+  "icon": "resources/logo.png", 
+  "qna": "https://github.com/hukq16/legado-fish-vscode/issues",
+  "bugs": {
+    "url": "https://github.com/hukq16/legado-fish-vscode/issues",
+    "email": "hukq16@gmail.com"
+  },
+  "keywords": [
+    "legado",
+    "开源阅读",
+    "小说",
+    "控制台",
+    "terminal",
+    "摸鱼"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hukq16/legado-fish-vscode.git"
+  },
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {

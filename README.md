@@ -1,71 +1,71 @@
-# legado-fish-vscode README
+# legado/开源阅读   vscode插件
 
-This is the README for your extension "legado-fish-vscode". After writing up a brief description, we recommend including the following sections.
 
-## Features
+> 可基于开源阅读app端或docker端在vscode下方的控制台阅读小说
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
-For example if there is an image subfolder under your extension project workspace:
 
-\!\[feature X\]\(images/feature-x.png\)
+## 介绍
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+* 基于开源阅读web api开发
+* 侧边栏选择书籍和章节
+* 控制台显示章节内容
+* 章节结束可点击按钮跳转到下一章
 
-## Requirements
+![overview](./resources/overview.png)
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
 
-## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## 使用步骤
 
-For example:
+1. 打开阅读app中的web服务，将手机和电脑连接到同一网络下
 
-This extension contributes the following settings:
+2. 在vscode setting中搜索legado-fish-vscode，配置服务器地址,默认为127.0.0.1:1122
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+   ![setting](./resources/setting.png)
 
-## Known Issues
+3. 点击侧边栏按钮，如果设置正确，将展示app内书籍列表，展开后显示章节名
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+4. 如下方控制台隐藏，请提前打开
 
-## Release Notes
+5. 点击章节名，即可在下方控制台进行阅读（**如果APP内没有内容缓存，控制台中也不会显示，所以请确保APP中有小说内容，书源切换也请在APP中进行，完成后可在侧边栏右上角刷新**）
 
-Users appreciate release notes as you update your extension.
+6. 单章阅读完成后可点击按钮跳到下一章
 
-### 1.0.0
+   ![overview](./resources/nextpage.png)
 
-Initial release of ...
+## 下一步工作
 
-### 1.0.1
+* 进度保存
+* 界面美化
+* 本地小说支持
+* 在线书籍搜索与添加
+* 快捷键
+* 性能优化
+* ……
 
-Fixed issue #.
 
-### 1.1.0
 
-Added features X, Y, and Z.
+## 相关链接
 
----
 
-## Following extension guidelines
+Github:https://github.com/hukq16/legado-fish-vscode
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+Issue:https://github.com/hukq16/legado-fish-vscode/issues
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+Legado:https://github.com/gedoor/legado
 
-## Working with Markdown
+免责声明:https://gedoor.github.io/Disclaimer
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
 
-## For more information
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+
+
+
+
+
+
+
+
