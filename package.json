@@ -11,7 +11,7 @@
     "Other"
   ],
   "license": "MIT",
-  "icon": "resources/logo.png", 
+  "icon": "resources/logo.png",
   "qna": "https://github.com/hukq16/legado-fish-vscode/issues",
   "bugs": {
     "url": "https://github.com/hukq16/legado-fish-vscode/issues",
@@ -41,14 +41,14 @@
         "command": "legado-fish.refreshEntry",
         "title": "Refresh",
         "icon": {
-            "light": "resources/light/refresh.svg",
-            "dark": "resources/dark/refresh.svg"
+          "light": "resources/light/refresh.svg",
+          "dark": "resources/dark/refresh.svg"
         }
       },
       {
         "command": "legado-fish.showText",
         "title": "showText"
-    }
+      }
     ],
     "viewsContainers": {
       "activitybar": [
@@ -84,20 +84,20 @@
     },
     "menus": {
       "view/title": [
-          {
-              "command": "legado-fish.refreshEntry",
-              "when": "view == legado-fish",
-              "group": "navigation"
-          }
+        {
+          "command": "legado-fish.refreshEntry",
+          "when": "view == legado-fish",
+          "group": "navigation"
+        }
       ]
-  },  
+    },
     "configuration": {
       "title": "legado-fish-vscode",
       "type": "object",
       "properties": {
         "legado-fish-vscode.webServeUrl": {
           "type": "string",
-          "default": "http://192.168.151.253:1122",
+          "default": "http://127.0.0.1:1122",
           "description": "阅读APP的WEB服务访问地址"
         }
       }
@@ -123,7 +123,6 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "axios": "^1.6.8",
     "is-url": "^1.2.4"
   }
 }

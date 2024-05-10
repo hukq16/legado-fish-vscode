@@ -143,11 +143,14 @@ export class BookNode extends vscode.TreeItem {
 
 async function fetchData(url: string): Promise<any> {
     try {
-        const response = await axios.get(url);
-        return response.data;  // axios 自动处理 JSON 数据
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();  // 解析 JSON 数据并返回
     } catch (error) {
-        console.error("Fetching data failed:", error);
-        return null;
+        console.error('Error fetching data:', error);
+        throw error;  // 重新抛出错误以便调用者可以捕获
     }
 }
 
