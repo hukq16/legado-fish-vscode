@@ -3,6 +3,7 @@
   "displayName": "legado阅读摸鱼",
   "description": "阅读app vscode摸鱼",
   "version": "0.0.1",
+  "publisher": "Keegan Hu",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -17,7 +18,50 @@
         "command": "legado-fish-vscode.helloWorld",
         "title": "Hello World"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "legado-fish-reader",
+          "title": "legado-reader",
+          "icon": "resources/legado-fish-vscode.svg"
+        }
+      ],
+      "panel": [
+        {
+          "id": "legado-panel",
+          "title": "legado-reader",
+          "webview": "legado-panel-webview",
+          "icon": "resources/legado-fish-vscode.svg"
+        }
+      ]
+    },
+    "views": {
+      "legado-fish-reader": [
+        {
+          "id": "legado-fish",
+          "name": "booklist"
+        }
+      ],
+      "legado-panel": [
+        {
+          "id": "legado-panel-webview",
+          "type": "webview",
+          "name": "booklist"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "legado-fish-vscode",
+      "type": "object",
+      "properties": {
+        "legado-fish-vscode.webServeUrl": {
+          "type": "string",
+          "default": "http://192.168.151.253:1122",
+          "description": "阅读APP的WEB服务访问地址"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
@@ -28,14 +72,18 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.85.0",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
+    "@types/vscode": "^1.85.0",
     "@typescript-eslint/eslint-plugin": "^7.7.1",
     "@typescript-eslint/parser": "^7.7.1",
-    "eslint": "^8.57.0",
-    "typescript": "^5.4.5",
     "@vscode/test-cli": "^0.0.8",
-    "@vscode/test-electron": "^2.3.9"
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "is-url": "^1.2.4"
   }
 }
