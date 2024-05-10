@@ -17,7 +17,19 @@
       {
         "command": "legado-fish-vscode.helloWorld",
         "title": "Hello World"
-      }
+      },
+      {
+        "command": "legado-fish.refreshEntry",
+        "title": "Refresh",
+        "icon": {
+            "light": "resources/light/refresh.svg",
+            "dark": "resources/dark/refresh.svg"
+        }
+      },
+      {
+        "command": "legado-fish.showText",
+        "title": "showText"
+    }
     ],
     "viewsContainers": {
       "activitybar": [
@@ -51,6 +63,15 @@
         }
       ]
     },
+    "menus": {
+      "view/title": [
+          {
+              "command": "legado-fish.refreshEntry",
+              "when": "view == legado-fish",
+              "group": "navigation"
+          }
+      ]
+  },  
     "configuration": {
       "title": "legado-fish-vscode",
       "type": "object",
