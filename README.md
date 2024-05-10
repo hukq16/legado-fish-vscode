@@ -55,6 +55,8 @@ Issue:https://github.com/hukq16/legado-fish-vscode/issues
 
 Legado:https://github.com/gedoor/legado
 
+VScode Marketplace:https://marketplace.visualstudio.com/items?itemName=keeganhu.legado-fish-vscode#review-details
+
 免责声明:https://gedoor.github.io/Disclaimer
 
 
