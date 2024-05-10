@@ -2,7 +2,7 @@
   "name": "legado-fish-vscode",
   "displayName": "legado阅读摸鱼",
   "description": "配合阅读app vscode摸鱼插件,用下方的控制台看小说",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "keeganhu",
   "engines": {
     "vscode": "^1.85.0"
