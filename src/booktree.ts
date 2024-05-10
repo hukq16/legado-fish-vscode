@@ -1,6 +1,5 @@
 import * as vscode from 'vscode';
 
-import axios from 'axios';
 
 const isUrl = require('is-url');
 
