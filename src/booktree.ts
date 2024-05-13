@@ -54,7 +54,7 @@ export class DepNodeProvider implements vscode.TreeDataProvider<BookNode> {
             const blistdata = await fetchData(getfullbookurl);
 
             if (blistdata) {
-                console.log("Received data:", blistdata);
+                // console.log("Received data:", blistdata);
                 if (blistdata.isSuccess) {
                     let booklist = blistdata.data;
                     console.log("Booklist:", booklist);
@@ -68,7 +68,7 @@ export class DepNodeProvider implements vscode.TreeDataProvider<BookNode> {
 
             }
 
-            return Promise.resolve([]);
+            // return Promise.resolve([]);
 
         }
         return Promise.resolve([]);
@@ -78,14 +78,14 @@ export class DepNodeProvider implements vscode.TreeDataProvider<BookNode> {
         let webServeUrl: string =
             vscode.workspace.getConfiguration().get("legado-fish-vscode.webServeUrl") || "";
         webServeUrl = webServeUrl.replace(/^\s+|[\/\s]+$/, "");
-        let getfullchapterurl = `${webServeUrl}/getChapterList?url=${bookurl}`;
+        let getfullchapterurl = `${webServeUrl}/getChapterList?url=` + encodeURIComponent(bookurl);
         console.log(getfullchapterurl);
         let chapternodes: BookNode[] = [];
         if (isUrl(getfullchapterurl)) {
             const clistdata = await fetchData(getfullchapterurl);
 
             if (clistdata) {
-                console.log("Received data:", clistdata);
+                // console.log("Received data:", clistdata);
                 if (clistdata.isSuccess) {
                     let chapterlist = clistdata.data;
                     console.log("Chapterlist:", chapterlist);
@@ -99,7 +99,7 @@ export class DepNodeProvider implements vscode.TreeDataProvider<BookNode> {
 
             }
 
-            return Promise.resolve([]);
+            // return Promise.resolve([]);
 
         }
         return Promise.resolve([]);
@@ -130,7 +130,7 @@ export class BookNode extends vscode.TreeItem {
         if (this.nodetype === leafType.chapter) {
             this.command = {
                 command: 'legado-fish.showText', // 命令标识符
-                title: 'Handle Click', // 仅描述性标题
+                title: 'showtext', // 仅描述性标题
                 arguments: [this] // 可选，传递当前节点或其他参数
             };
         }
@@ -202,7 +202,7 @@ export class BookTextViewProvider implements vscode.WebviewViewProvider {
                         this._index = this._index + 1, this._lablelist.length - 1;
                         this._lable = this._lablelist[this._index];
                         this.updatepage(this._lable, this._bookurl, this._index);
-                        
+
                         return;
                 }
             }
@@ -216,7 +216,7 @@ export class BookTextViewProvider implements vscode.WebviewViewProvider {
                 this._lable = chapternode.label;
                 this._bookurl = chapternode.bookurl;
                 this._index = chapternode.index;
-                
+
             }
         }
     }
@@ -298,22 +298,22 @@ async function getBookContent(bookurl: string, index: number): Promise<string> {
     let webServeUrl: string =
         vscode.workspace.getConfiguration().get("legado-fish-vscode.webServeUrl") || "";
     webServeUrl = webServeUrl.replace(/^\s+|[\/\s]+$/, "");
-    let getfulltexturl = `${webServeUrl}/getBookContent?url=${bookurl}&index=${index}`;
+    let getfulltexturl = `${webServeUrl}/getBookContent?url=` + encodeURIComponent(bookurl) + `&index=${index}`;
     console.log(getfulltexturl);
     if (isUrl(getfulltexturl)) {
         const textdata = await fetchData(getfulltexturl);
 
         if (textdata) {
-            console.log("Received data:", textdata);
+            // console.log("Received data:", textdata);
             if (textdata.isSuccess) {
                 let chapterlist = textdata.data;
-                console.log("Chapterlist:", chapterlist);
+                // console.log("Chapterlist:", chapterlist);
                 return Promise.resolve(chapterlist);
             }
 
         }
 
-        return Promise.resolve('');
+        // return Promise.resolve('');
 
     }
     return Promise.resolve('');
@@ -333,14 +333,14 @@ async function getchapterlistlable(bookurl: string): Promise<string[]> {
     let webServeUrl: string =
         vscode.workspace.getConfiguration().get("legado-fish-vscode.webServeUrl") || "";
     webServeUrl = webServeUrl.replace(/^\s+|[\/\s]+$/, "");
-    let getfullchapterurl = `${webServeUrl}/getChapterList?url=${bookurl}`;
+    let getfullchapterurl = `${webServeUrl}/getChapterList?url=` + encodeURIComponent(bookurl);
     console.log(getfullchapterurl);
     let chapternodes: string[] = [];
     if (isUrl(getfullchapterurl)) {
         const clistdata = await fetchData(getfullchapterurl);
 
         if (clistdata) {
-            console.log("Received data:", clistdata);
+            // console.log("Received data:", clistdata);
             if (clistdata.isSuccess) {
                 let chapterlist = clistdata.data;
                 console.log("Chapterlist:", chapterlist);
@@ -354,7 +354,7 @@ async function getchapterlistlable(bookurl: string): Promise<string[]> {
 
         }
 
-        return Promise.resolve([]);
+        // return Promise.resolve([]);
 
     }
     return Promise.resolve([]);

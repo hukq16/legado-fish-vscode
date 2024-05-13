@@ -1,5 +1,11 @@
 # legado/开源阅读   vscode插件
 
+[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/keeganhu.legado-fish-vscode?label=version)](https://marketplace.visualstudio.com/items?itemName=keeganhu.legado-fish-vscode)
+[![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/keeganhu.legado-fish-vscode?label=downloads)](https://marketplace.visualstudio.com/items?itemName=keeganhu.legado-fish-vscode)
+[![stars](https://img.shields.io/github/stars/hukq16/legado-fish-vscode)](https://github.com/hukq16/legado-fish-vscode.git)
+[![issues](https://img.shields.io/github/issues/hukq16/legado-fish-vscode)](https://github.com/hukq16/legado-fish-vscode.git)
+[![GitHub License](https://img.shields.io/github/license/hukq16/legado-fish-vscode)](https://github.com/hukq16/legado-fish-vscode.git)
+
 
 > 可基于开源阅读app端或docker端在vscode下方的控制台阅读小说
 
